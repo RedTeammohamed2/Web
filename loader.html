@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل الموقع...</title>
+    <style>
+        /* الخلفية المتدرجة */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* ألوان متدرجة */
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* الحاوية الخاصة بالتحميل */
+        .loader-container {
+            text-align: center;
+            color: #fff;
+        }
+
+        /* الدوار المتحرك */
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #fff;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            animation: spin 2s linear infinite;
+        }
+
+        /* تأثيرات الدوار */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* النص المتحرك */
+        .loading-text {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-out infinite alternate;
+        }
+
+        /* تأثير النص المتحرك */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* شريط التقدم */
+        .progress-container {
+            margin-top: 30px;
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 25px;
+            padding: 5px;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 20px;
+            animation: progress 3s linear forwards;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* شعار الموقع (اختياري) */
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 150px; /* عرض الشعار */
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- حاوية صفحة التحميل -->
+    <div class="loader-container">
+        <!-- شعار الموقع -->
+        <div class="logo">
+            <img src="assets/logo.png" alt="شعار الموقع"> <!-- استبدل 'logo.png' بشعارك -->
+        </div>
+        
+        <!-- مؤشر التحميل -->
+        <div class="loader"></div>
+        
+        <!-- النص الذي يوضح التحميل -->
+        <p class="loading-text">جاري تحميل الموقع <span>...من فضلك انتظر</span></p>
+
+        <!-- شريط التقدم -->
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        // بعد 3 ثوانٍ سيتم توجيه المستخدم إلى الصفحة الرئيسية
+        setTimeout(function() {
+            window.location.href = "index.html";  // سيتم تحويل المستخدم إلى الصفحة الرئيسية
+        }, 3000); // 3000 مللي ثانية (3 ثوانٍ)
+    </script>
+</body>
+</html>

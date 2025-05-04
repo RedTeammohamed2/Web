@@ -1,0 +1,594 @@
+/* ============================== 
+   إعدادات عامة ومتغيرات الجذور 
+================================= */
+
+:root {
+    --primary-color: #2c3e50;
+    --hover-color: #f8f9fa;
+    --transition-speed: 0.3s;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================== 
+   إعدادات صفحة HTML و Body 
+================================= */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #EFEFEF;
+}
+
+/* ============================== 
+   تنسيق الهيدر (Header) 
+================================= */
+/* ============================
+   تنسيق الهيدر
+============================ */
+
+/* الهيدر */
+/* ============================
+   تحسين تنسيق الهيدر
+============================ */
+
+/* الهيدر */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #2b3e64, #1f2a39); /* خلفية متدرجة رائعة */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* تأثير ظل أقوى */
+    min-height: 100px;
+    max-height: 100px;
+    color: white;
+    border-bottom: 2px solid #f39c12; /* إضافة خط أسفل الهيدر للتفريق */
+}
+
+/* اللوجو على اليسار */
+.logo {
+    order: 1;
+    flex-shrink: 0;
+    max-width: 150px;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* تكبير اللوجو عند التمرير */
+}
+
+/* قائمة التنقل في المنتصف */
+nav {
+    order: 2;
+    margin: 0 auto;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem; /* زيادة المسافة بين العناصر */
+    padding: 0;
+}
+
+/* التنسيق الرئيسي للعناصر */
+.nav-item {
+    position: relative;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: 
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+/* تغيير الألوان عند التمرير */
+.nav-item:hover {
+    background-color: #f39c12; /* لون برتقالي عند التمرير */
+    transform: translateY(-4px);
+    color: white; /* تغيير اللون إلى الأبيض */
+}
+
+/* تأثير الخط تحت النص */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #f39c12; /* نفس اللون البرتقالي */
+    transition: width 0.3s ease;
+}
+
+/* تغيير عرض الخط عند التمرير */
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: white; /* جعل النص أبيض بشكل افتراضي */
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+/* تغيير اللون عند التمرير على الرابط */
+.nav-item:hover a {
+    color: #2b3e64; /* تغيير لون النص إلى اللون الداكن عند التمرير */
+}
+
+/* ------------------------------------------------------- */
+/* مظهر الكتاب */
+/* ============================
+   تحسين dark mode
+============================ */
+
+/* الخلفية والألوان في وضع الـ dark mode */
+body.dark {
+    background-color: #1f2a39; /* خلفية داكنة جميلة */
+    color: #f4f4f4; /* نص أبيض واضح */
+    transition: background-color 0.5s ease, color 0.5s ease; /* تأثير انتقال عند التبديل بين الوضعين */
+}
+
+/* زر التبديل بين الوضعين */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* الزر في الزاوية اليسرى */
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f4f4f4; /* اللون الافتراضي */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease; /* تأثير التحول السلس */
+}
+
+.toggle-btn:hover {
+    background-color: #e0e0e0; /* تدرج في اللون عند التمرير */
+    transform: scale(1.1); /* تكبير الزر عند التمرير */
+}
+
+/* تغيير لون الزر في وضع الـ dark mode */
+body.dark .toggle-btn {
+    background-color: #333; /* اللون الداكن في وضع الـ dark mode */
+}
+
+body.dark .toggle-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: #f4f4f4; /* تغيير لون الأيقونة في الـ dark mode */
+}
+
+/* الأيقونة */
+.toggle-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: #333; /* اللون الافتراضي للأيقونة */
+    transition: fill 0.3s ease; /* تأثير سلس عند التبديل */
+}
+
+/* تأثير التحول في الأيقونة عند التبديل إلى وضع الـ dark mode */
+body.dark .toggle-btn svg {
+    fill: #f4f4f4; /* تغيير اللون إلى الأبيض في وضع الـ dark mode */
+}
+
+/* تأثيرات إضافية للتبديل بين الوضعين */
+body.dark .toggle-btn:hover {
+    background-color: #555; /* لون أغمق عند التمرير في الـ dark mode */
+}
+
+/* تغيير النصوص والروابط عند التبديل لوضع الـ dark mode */
+body.dark .nav-item a,
+body.dark footer p,
+body.dark .footer-links li a {
+    color: #f4f4f4; /* النص الأبيض في وضع الـ dark mode */
+}
+
+/* ألوان الروابط عند التمرير في وضع الـ dark mode */
+body.dark .nav-item:hover a,
+body.dark .footer-links li a:hover {
+    color: #f39c12; /* اللون البرتقالي في وضع الـ dark mode */
+}
+
+/* ============================================= */
+/* الكروت (ألعاب) */
+/* ============================
+   تحسين كروت الألعاب (game cards)
+============================ */
+
+/* ============================
+   تحسين الكروت المتقدمة لعام 2025
+============================ */
+
+.games-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 4rem 1rem;
+    margin-top: 100px;
+    background-color: #F4F4F4;
+}
+
+/* كارد اللعبة مع تحسينات كبيرة */
+.game-card {
+    position: relative;
+    width: 350px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 16px; /* حواف دائرية */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* ظلال ناعمة */
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease, border-radius 0.4s ease;
+    background-color: #fff;
+    will-change: transform, box-shadow, filter, border-radius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid transparent; /* حواف شفافة */
+    background: linear-gradient(135deg, #ffe9e9, #f4f4f4);
+}
+
+/* عند التمرير على الكارد */
+.game-card:hover {
+    transform: translateY(-12px) scale(1.08); /* تأثير التكبير والتحريك */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1); /* تأثير الظل القوي */
+    filter: brightness(1.2); /* زيادة السطوع */
+    border-radius: 18px; /* تأثير الإنعطاف السلس */
+    border: 2px solid #f39c12; /* إضافة حواف مرئية عند التمرير */
+}
+
+/* تأثير البارالاكس على الصورة */
+.game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    display: block;
+    border-radius: 16px;
+}
+
+.game-card:hover img {
+    transform: scale(1.1) translateY(-10%); /* تأثير الحركة البارالاكس */
+    opacity: 0.85;
+}
+
+/* تدرج ديناميكي مع الرسوم المتحركة في الـ overlay */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)); /* تدرج ديناميكي */
+    color: #fff;
+    text-align: center;
+    transition: transform 0.4s ease, background 0.3s ease, opacity 0.3s ease;
+    transform: translateY(100%);
+    border-radius: 0 0 16px 16px;
+    opacity: 0; /* إخفاء الـ overlay بشكل تدريجي */
+}
+
+/* ظهور الـ overlay عند التمرير */
+.game-card:hover .card-overlay {
+    transform: translateY(0%);
+    opacity: 1; /* زيادة الشفافية عند التمرير */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.card-overlay h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* تأثير الظل على النص */
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px);
+}
+
+/* تغيير اللون عند التمرير على النص */
+.game-card:hover .card-overlay h3 {
+    color: #f39c12; /* اللون البرتقالي */
+    transform: translateY(0px); /* حركة النص عند التمرير */
+}
+
+/* إضافة زر تفاعلي */
+.card-overlay .game-btn {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.8rem;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* تأثير الزر عند التمرير */
+.card-overlay .game-btn:hover {
+    background-color: #e67e22;
+    transform: translateY(-6px); /* رفع الزر */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* إضافة تأثير الظل */
+}
+
+.card-overlay .game-btn:active {
+    transform: translateY(2px); /* تأثير الضغط */
+}
+
+/* تحسين نص التعليقات أو العنوان داخل الكارد */
+.game-card .card-text {
+    color: #ccc;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* إظهار النص عند التمرير */
+.game-card:hover .card-text {
+    opacity: 1;
+}
+
+/* ============================== 
+   ستايل القائمة المنسدلة 
+================================= */
+
+/* ============================== 
+   تنسيق القائمة المنسدلة (Dropdown)
+================================= */
+
+.dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* تأثير ظلي أقوى */
+    z-index: 1;
+    top: 100%;
+    right: 0;
+    padding: 10px 0; /* إضافة مسافة من الأعلى والأسفل لزيادة المساحة داخل القائمة */
+    border-radius: 8px; /* إضافة حواف دائرية للقائمة */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease;
+    transform: translateY(10px); /* تحريك القائمة للأسفل بشكل بسيط عند الظهور */
+}
+
+/* تغيير الألوان عند التمرير داخل الرابط */
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: right; /* محاذاة النص لليمين */
+    font-size: 1rem; /* زيادة حجم الخط لتحسين القراءة */
+    font-weight: 500; /* جعل النص أكثر وضوحًا */
+    transition: background-color 0.3s ease, padding-left 0.2s ease;
+}
+
+/* تأثير عند التمرير على الرابط */
+.dropdown-content a:hover {
+    background-color: #f39c12; /* تغيير اللون إلى برتقالي */
+    color: white; /* تغيير لون النص */
+    padding-left: 20px; /* إضافة تأثير عند التمرير */
+}
+
+/* إظهار القائمة عند التمرير فوق العنصر */
+.nav-item:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* جعل القائمة تظهر تدريجيًا */
+}
+
+/* إضافة تأثير خاص لعرض القائمة */
+.nav-item:focus-within .dropdown-content,
+.nav-item:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ============================== 
+   تأثير على الأيقونات في القائمة المنسدلة
+================================= */
+
+.dropdown-content a svg {
+    margin-left: 8px; /* إضافة مساحة بين النص والأيقونة */
+    transition: transform 0.3s ease;
+}
+
+.dropdown-content a:hover svg {
+    transform: translateX(5px); /* تحريك الأيقونات قليلاً عند التمرير */
+}
+
+/* ============================== 
+   تنسيق الأيقونات الاجتماعية 
+================================= */
+
+
+/* ============================== 
+   تنسيق الفوتر (Footer) 
+================================= */
+
+footer {
+    background: linear-gradient(135deg, #1c2a3d, #2b3e64); /* ألوان خلفية داكنة واحترافية */
+    color: white;
+    padding: 1.5rem 1rem; /* تقليل الحشو ليبدو أكثر تماسكًا */
+    text-align: center;
+    margin-top: 1rem; /* تقليل المسافة العلوية */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.2); /* تحسين تأثير الظل العلوي */
+    border-top-left-radius: 15px; /* تقليل التدوير */
+    border-top-right-radius: 15px;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1000px; /* تقليل العرض قليلاً */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* تقليل التباعد بين العناصر */
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem; /* تقليل حجم الخط */
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* إضافة تأثيرات إضافية */
+}
+
+.footer-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #f39c12; /* اللون البرتقالي الفاتح */
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.footer-links li a:hover {
+    color: #f39c12; /* تغيير اللون عند التمرير */
+    transform: translateY(-4px); /* تقليل التحرك عند التمرير */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* تأثير الظل للنص */
+}
+
+.footer-links li a:hover::after {
+    width: 100%;
+    background-color: #ff6347; /* تغيير اللون عند التمرير */
+}
+
+footer p {
+    font-size: 0.9rem; /* تقليل حجم الخط */
+    color: #ddd;
+    margin-top: 1rem; /* تقليل المسافة العلوية */
+    text-align: center;
+    direction: rtl;
+    line-height: 1.5;
+    font-style: italic;
+    letter-spacing: 0.5px; /* إضافة تباعد بين الحروف */
+}
+
+
+/* تأثير "RedBook" */
+.RedBook {
+    font-size: 1rem; /* تقليل الحجم ليبدو أكثر تناسقًا */
+    color: #ffffff;
+    margin-top: 1rem;
+    text-align: left;
+    direction: ltr;
+    font-weight: bold;
+    letter-spacing: 0.5px; /* إضافة تباعد بين الحروف */
+    transition: color 0.3s ease, transform 0.3s ease; /* إضافة تأثيرات إضافية عند التمرير */
+}
+
+.RedBook:hover {
+    color: #f39c12; /* تغيير اللون عند التمرير */
+    transform: scale(1.05); /* تقليل التكبير */
+}
+
+/* ============================== 
+   تنسيق شريط البحث 
+================================= */
+
+/* ============================== 
+   تنسيق الأجهزة الصغيرة 
+================================= */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .logo {
+        order: 1;
+        max-width: 120px;
+    }
+
+    .logo img {
+        height: 80px;
+        width: auto;
+    }
+
+    nav {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 1rem;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .social-icons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .toggle-btn {
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+    }
+}

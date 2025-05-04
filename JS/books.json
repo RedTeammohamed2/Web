@@ -1,0 +1,21 @@
+[
+    {
+      "title": "كتاب 1",
+      "description": "وصف الكتاب 1",
+      "image": "assets/book1.jpg",
+      "download_link": "https://example.com/download/book1"
+    },
+    {
+      "title": "كتاب 2",
+      "description": "وصف الكتاب 2",
+      "image": "assets/book2.jpg",
+      "download_link": "https://example.com/download/book2"
+    },
+    {
+      "title": "كتاب 3",
+      "description": "وصف الكتاب 3",
+      "image": "assets/book3.jpg",
+      "download_link": "https://example.com/download/book3"
+    }
+  ]
+  

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Counterz Space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="assets/logowebsite.png" type="image/png">
+</head>
+
+<body>
+    <!-- ================== Header ================== -->
+    <header class="header">
+        <!-- اللوجو -->
+        <div class="logo">
+            <img src="assets/logo.png" alt="Red Book Logo">
+        </div>
+
+        <!-- زر تغيير الوضع الليلي -->
+        <button class="toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+            <!-- Sun Icon -->
+            <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 4.5a1 1 0 011 1V7a1 1 0 11-2 0V5.5a1 1 0 011-1zm0 11a4 4 0 100-8 4 4 0 000 8zm0 2a1 1 0 011 1v1.5a1 1 0 11-2 0V18.5a1 1 0 011-1zM4.5 11a1 1 0 100 2H6a1 1 0 100-2H4.5zm13 0a1 1 0 100 2h1.5a1 1 0 100-2H17.5zM6.34 6.34a1 1 0 011.41 0l1.06 1.06a1 1 0 11-1.41 1.41L6.34 7.75a1 1 0 010-1.41zm9.19 9.19a1 1 0 011.41 0l1.06 1.06a1 1 0 11-1.41 1.41l-1.06-1.06a1 1 0 010-1.41zm0-9.19a1 1 0 000 1.41l1.06 1.06a1 1 0 101.41-1.41L16.94 6.34a1 1 0 00-1.41 0zm-9.19 9.19a1 1 0 000 1.41l1.06 1.06a1 1 0 101.41-1.41L7.75 15.53a1 1 0 00-1.41 0z" />
+            </svg>
+
+            <!-- Moon Icon -->
+            <svg id="iconMoon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" />
+            </svg>
+        </button>
+
+        <!-- قائمة التنقل -->
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#">الألعاب القديمة</a>
+                    <div class="dropdown-content">
+                        <a href="#">قريبا</a>
+                        <a href="#">قريبا</a>
+                        <a href="#">قريبا</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#">الالعاب الحديثة</a>
+                    <div class="dropdown-content">
+                        <a href="#">قريبا</a>
+                        <a href="#">قريبا</a>
+                        <a href="#">قريبا</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================== قسم الألعاب ================== -->
+    <section class="games-grid">
+        <div class="game-card">
+            <img src="assets/Gata.jpg" alt="جاتا">
+            <div class="card-overlay">
+                <h3>جاتا</h3>
+            </div>
+        </div>
+        <div class="game-card">
+            <img src="assets/medal.jpg" alt = "ميدل">
+            <div class="card-overlay">
+                <h3>ميدل</h3>
+            </div>
+        </div>
+        <div class="game-card">
+            <img src="assets/salah.jpg" alt="لعبة 3">
+            <div class="card-overlay">
+                <h3>صلاح الدين</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== Footer ================== -->
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">سياسة الخصوصية</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+            </ul>
+            <p class="copyright">جميع الحقوق محفوظة لـ <span class="RedBook">Counterz Space</span></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="JS/Main.js"></script>
+</body>
+
+</html>
